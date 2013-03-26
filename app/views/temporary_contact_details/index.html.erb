@@ -1,0 +1,36 @@
+<%= form_for(current_user, :url => update_current_user_path) do |f| %>
+  <%= f.email_field :email %>
+  <%= f.button "Update Email Address" %>
+<% end %>
+
+<h1>Temporary Links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Link</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <%= form_for(TemporaryContactDetails.new, :url => temporary_contact_details_path) do |f| %>
+          <%= f.button %>
+        <% end %>
+      </td>
+    </tr>
+  </tfoot>
+  
+  <tbody>
+    <% @details.each do |d| %>
+      <tr>
+        <th><%= d.email %></th>
+        <td><%= temporary_link_url(d.slug) %></td>
+        <td><%= link_to "[x]", temporary_contact_detail_delete_path(d.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

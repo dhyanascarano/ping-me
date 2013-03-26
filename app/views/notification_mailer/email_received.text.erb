@@ -1,0 +1,11 @@
+Hi,
+
+You've received an email to Ping Me from <%= @params[:from] %>.
+
+Here's what they wrote:
+
+<%= @params[:body] %>
+
+====================
+Don't want to receive emails to this address again? Click the link below:
+<%= temporary_contact_detail_delete_url(@params[:details].id) %>
