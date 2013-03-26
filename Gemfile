@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'multi_json'
+gem 'oj'
 
 # Gems used only for assets and not required
 # in production environments by default.

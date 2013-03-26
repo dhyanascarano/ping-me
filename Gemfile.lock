@@ -61,6 +61,7 @@ GEM
     mime-types (1.21)
     multi_json (1.7.2)
     oauth (0.4.7)
+    oj (2.0.10)
     omniauth (1.1.3)
       hashie (~> 1.2)
       rack
@@ -128,6 +129,7 @@ DEPENDENCIES
   devise
   jquery-rails
   multi_json
+  oj
   omniauth-twitter
   rails (= 3.2.9)
   sass-rails (~> 3.2.3)

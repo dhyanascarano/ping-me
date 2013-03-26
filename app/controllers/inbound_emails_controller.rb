@@ -1,7 +1,7 @@
 class InboundEmailsController < ApplicationController
   def create
     if "webhooks.cloudmailin.com" == request.host
-      email = InboundEmailHandler.receive(request.body.read).record
+      email = InboundEmailHandler.receive(request.body.read.force_encoding("UTF-8")).record
       if email.save
         head :created
       else
